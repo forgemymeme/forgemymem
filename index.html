@@ -1,19 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Untitled</title>
-  
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForgeMyMeme</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .social-links a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 5px 15px;
+            background-color: #444;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .social-links a:hover {
+            background-color: #666;
+        }
+        .language-selector {
+            margin-top: 15px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #666;
+        }
+        .hero {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('https://i.postimg.cc/kgSGMQDZ/IMG-2388.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            margin: 1rem;
+            color: #fff;
+        }
+        .gallery {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 2rem 0;
+        }
+        .gallery img {
+            height: 150px;
+            margin-right: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            animation: scroll 30s linear infinite;
+        }
+        .gallery img:hover {
+            animation-play-state: paused;
+            transform: scale(1.1);
+        }
+        /* Continuous scroll animation */
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        /* Responsive Styling */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .gallery img {
+                height: 100px;
+            }
+            .social-links a {
+                font-size: 1rem;
+                padding: 5px 10px;
+            }
+        }
+    </style>
     <script>
         const translations = {
             en: {
@@ -105,119 +211,13 @@
             setLanguage(language);
         }
     </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        .social-links {
-            position: absolute;
-            top: 10px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        .social-links a {
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #ddd;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 1rem;
-            background-color: #444;
-        }
-        nav a {
-            color: #fff;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #666;
-        }
-        .hero {
-            height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: url('https://i.postimg.cc/kgSGMQDZ/IMG-2388.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-        }
-        .container {
-            padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-            margin: 1rem;
-            color: #fff;
-        }
-        .gallery {
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 2rem 0;
-        }
-        .gallery img {
-            height: 150px;
-            margin-right: 10px;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .scroll-container {
-            display: inline-block;
-            animation: scroll 30s linear infinite;
-        }
-        .scroll-container:hover {
-            animation-play-state: paused;
-        }
-        .language-selector {
-            margin-top: 10px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-    </style>
 </head>
 <body onload="setLanguage('en')">
     <header>
         <h1 id="tagline">Welcome to ForgeMyMeme!</h1>
         <div class="social-links">
-            <a href="https://www.instagram.com/forgemymeme/" target="_blank">Instagram</a>
-            <a href="https://www.tiktok.com/@forgemymeme?_t=8rH1PAvjuAi&_r=1" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/forgemymeme/" target="_blank" id="instagramFollow">Instagram</a>
+            <a href="https://www.tiktok.com/@forgemymeme?_t=8rH1PAvjuAi&_r=1" target="_blank" id="tiktokFollow">TikTok</a>
         </div>
         <div class="language-selector">
             <label for="languageSelect">Choose Language:</label>
@@ -250,7 +250,6 @@
     <section class="container gallery" id="gallery">
         <h2 id="galleryTitle">Gallery</h2>
         <div class="scroll-container">
-            <!-- Bildlinks -->
             <img src="https://i.postimg.cc/qzjD0sXD/IMG-2496.jpg" alt="Image 1">
             <img src="https://i.postimg.cc/H8t5wtsq/IMG-2573.jpg" alt="Image 2">
             <img src="https://i.postimg.cc/6y9bDjRG/IMG-2587.jpg" alt="Image 3">
@@ -284,9 +283,5 @@
     <footer id="contact">
         <p id="footerText">&copy; 2024 ForgeMyMeme.</p>
     </footer>
-</body>
-</html>
-<!-- partial -->
-  
 </body>
 </html>
